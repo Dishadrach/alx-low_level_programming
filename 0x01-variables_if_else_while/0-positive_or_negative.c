@@ -1,42 +1,26 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
-#include <unistd.h>
+
 /**
-* main - Entry point
-* Description: prints all possible combination of 2-digit numbers
-* Return: Always 0 (success)
+ * main - Print if the numbe is positive, zero or negative.
+* Return: Always 0
 */
 int main(void)
 {
-	int c, i, k, j;
-	for (c = 48; c <= 57; c++)
+	int n;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	/*your code goes there*/
+	if (n > 0)
 	{
-		for (i = 48; i <= 57; i++)
-		{
-			for (k = 48; k <= 57; k++)
-			{
-				for (j = 48; j <= 57; j++)
-				{
-				if (((k + j) > (c + i) &&  k >= c) || c < k)
-				{
-					putchar(c);
-					putchar(i);
-					putchar(' ');
-					putchar(k);
-					putchar(j);
-					if (c + i + k + j == 227 && c == 57)
-					{
-					break;
-					}
-					else
-					{
-					putchar(',');
-					putchar(' ');
-					}
-				}
-				}
-			}
-		}
+		printf("%i is positive\n", n);
 	}
-	putchar('\n');
-	return (0);
+	else if (n == 0)
+	{
+		printf("%i is zero\n", n);
+	}
+	else if (n < 0)
+		printf("%i is negative\n", n);
 }
+return (0);
