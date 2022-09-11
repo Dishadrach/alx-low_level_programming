@@ -1,27 +1,42 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <unistd.h>
 /**
 * main - Entry point
-*
-* Return: Always 0 (Success/correct)
+* Description: prints all possible combination of 2-digit numbers
+* Return: Always 0 (success)
 */
 int main(void)
 {
-	int n;
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	if (n == 0)
+	int c, i, k, j;
+	for (c = 48; c <= 57; c++)
 	{
-	printf("%d is zero\n", n);
+		for (i = 48; i <= 57; i++)
+		{
+			for (k = 48; k <= 57; k++)
+			{
+				for (j = 48; j <= 57; j++)
+				{
+				if (((k + j) > (c + i) &&  k >= c) || c < k)
+				{
+					putchar(c);
+					putchar(i);
+					putchar(' ');
+					putchar(k);
+					putchar(j);
+					if (c + i + k + j == 227 && c == 57)
+					{
+					break;
+					}
+					else
+					{
+					putchar(',');
+					putchar(' ');
+					}
+				}
+				}
+			}
+		}
 	}
-	else if (n < 0)
-	{
-	printf("%d is negative\n", n);
-	}
-	else
-	{
-	printf("%d is positive\n", n);
-	}
+	putchar('\n');
 	return (0);
 }
