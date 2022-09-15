@@ -2,13 +2,11 @@
 
 /**
  * print_times_table - Print the n times table
- *
- * @n: number times table table (0 < n<= 15)
  * 
  * Return: no return
  */
 
-void print_times_table(int n)
+int main(void)
 {
 	int a, b, op;
 
