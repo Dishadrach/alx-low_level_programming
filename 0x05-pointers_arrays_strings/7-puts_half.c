@@ -2,23 +2,26 @@
 
 /**
  * puts_half - print half of a string
- * @str: input
- * Return: half the input
+ *
+ * @str: input string
+ *
+ * Return: void
  */
-void puts_half(chat *str)
+void puts_half(char *str)
 {
-	int len = 0;
+	int i = 0;
+	int n;
 
-	while (*str != '\0')
-	{
-		len++;
-		str++;
-	}
-	str -= (len / 2);
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str++;
-	}
+	while (str[i] != '\0')
+		i++;
+
+	if (i % 2 != 0)
+		n = (i + 1) / 2;
+	else
+		n = i / 2;
+
+	for (; str[n] != '\0'; n++)
+		_putchar(str[n]);
+
 	_putchar('\n')
 }
