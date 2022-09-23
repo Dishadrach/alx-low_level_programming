@@ -1,30 +1,20 @@
 #include "main.h"
-
 /**
- * leet - Encodes a string into 1337
- * @c: String of variable pointer
- * Return: String that is encoded
+ * reverse_array - reverse array of integers
+ * @a: array
+ * @n: number of elements of array
+ *
+ * Return: void
  */
-
-char *leet(char *c)
+void reverse_array(int *a, int n)
 {
-	char *cp = c;
-	char key[] = {'A', 'E', 'O', 'T', 'L'};
-	int value[] = {4, 3, 0, 7, 1};
-	unsigned int i;
+	int i;
+	int t;
 
-	while (*c)
+	for (i = 0; i < n--; i++)
 	{
-		for (i = 0; i < sizeof(key) / sizeof(char); i++)
-		{
-			/*32 is the difference between lower case letters and apper case letters*/
-			if (*c == key[i] || *c == key[i] + 32)
-			{
-				*c = 48 + value[i];
-			}
-		}
+		t = a[i];
+		a[i] = a[n];
+		a[n] = t;
 	}
-	c++;
-
-	return (cp);
 }
