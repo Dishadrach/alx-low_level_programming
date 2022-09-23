@@ -1,20 +1,25 @@
 #include "main.h"
-/**
- * reverse_array - reverse array of integers
- * @a: array
- * @n: number of elements of array
- *
- * Return: void
- */
-void reverse_array(int *a, int n)
-{
-	int i;
-	int t;
 
-	for (i = 0; i < n--; i++)
+/**
+ * leet - encode into 1337
+ * @n: input
+ * Return: value of n
+ */
+char *leet(char *)
+{
+	int i, j;
+	char A1[] = "aAeEoOtTlL";
+	char A2[] = "4433007711";
+
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		t = a[i];
-		a[i] = a[n];
-		a[n] = t;
+		for (j = 0; j < 10; j++)
+		{
+			if (n[i] == A1[j])
+			{
+				n[i] = A2[j];
+			}
+		}
 	}
+	return (n);
 }
