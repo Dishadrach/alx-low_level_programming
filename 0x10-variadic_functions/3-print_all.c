@@ -84,6 +84,16 @@ void print_char(va_list *arg)
 }
 
 /**
+ * print_int - prints an int
+ * @arg: pointer to int
+ */
+
+void print_int(va_list *arg)
+{
+	printf("%d", va_arg(*arg, int));
+}
+
+/**
  * print_float - prints a float data type
  * @arg: pointer to float
  */
